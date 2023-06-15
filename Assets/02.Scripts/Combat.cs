@@ -6,6 +6,8 @@ public class Combat : MonoBehaviour
 {
     public enum Mode { None, Combat }
     public Mode mode;
+    public enum Equip { None, Melee, Range }
+    public Equip equip;
 
     public bool isCombat = false;
 
@@ -13,11 +15,13 @@ public class Combat : MonoBehaviour
     private int npcLayer;
     private int enemyLayer;
     private int layerMask;
+    private bool disArming;
 
     [SerializeField] GameObject target;
     Animator anim;
     Movement playerMove;
     Camera mainCam;
+    Coroutine combatToNone;
 
     void Awake()
     {
@@ -38,12 +42,23 @@ public class Combat : MonoBehaviour
 
     void Update()
     {
+        KeyCtrl();
         MouseCtrl();
     }
 
     void KeyCtrl()
     {
+        if (target != null)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                mode = Mode.Combat;
+                if (disArming)
+                    StopCoroutine(combatToNone);
 
+                Attack();
+            }
+        }
     }
 
     void MouseCtrl()
@@ -56,22 +71,33 @@ public class Combat : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
                 target = hit.collider.gameObject;
-                if (target.CompareTag("Enemy"))
+                if (target.CompareTag("Enemy") && Input.GetMouseButtonDown(1))
                 {
                     mode = Mode.Combat;
+                    if (disArming)
+                        StopCoroutine(combatToNone);
+
+                    Attack();
                 }
             }
             else
             {
                 target = null;
-                StartCoroutine(CombatToNone());
+                combatToNone = StartCoroutine(CombatToNone());
             }
         }
     }
 
+    void Attack()
+    {
+
+    }
+
     IEnumerator CombatToNone()
     {
+        disArming = true;
         yield return new WaitForSeconds(5f);
         mode = Mode.None;
+        disArming = false;
     }
 }

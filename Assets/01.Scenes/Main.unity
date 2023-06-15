@@ -437,6 +437,7 @@ MonoBehaviour:
   curPan: 0
   curTilt: 10
   dist: 5
+  curDist: 5
   player: {fileID: 657605304}
   tilt: {fileID: 1175233704}
   mainCam: {fileID: 1167370103}
@@ -2498,6 +2499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
+  equip: 0
   isCombat: 0
   target: {fileID: 0}
 --- !u!1001 &1125842824

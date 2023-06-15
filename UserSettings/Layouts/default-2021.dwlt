@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 85
+  controlID: 105
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 18
+  controlID: 93
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 94
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 20
+  controlID: 95
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -466,22 +466,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/02.Scripts
     m_Globs: []
     m_OriginalText: 
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/02.Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\User\Documents\GitHub\Portfolio_3D_RPG
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c600000
-    m_LastClickedID: 24684
+    m_SelectedIDs: 3c610000
+    m_LastClickedID: 24892
     m_ExpandedIDs: 000000006c6000006e60000070600000726000007460000076600000786000007a6000007c6000007e60000080600000826000008460000086600000886000008a6000008c6000008e600000906000009260000094600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: f0590000
       m_LastClickedID: 23024
-      m_ExpandedIDs: 06fbffff
+      m_ExpandedIDs: 46f9ffff06fbffff085a0000185a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -974,13 +974,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.2720017, y: 0.25342238, z: -0.07453529, w: 0.9253712}
+    m_Target: {x: 0.21906182, y: -0.06841582, z: 0.015390695, w: 0.9732299}
     speed: 2
-    m_Value: {x: 0.2719915, y: 0.25341287, z: -0.07453249, w: 0.9253365}
+    m_Value: {x: 0.21905284, y: -0.06841301, z: 0.015390064, w: 0.97318995}
   m_Size:
-    m_Target: 12.102099
+    m_Target: 4.900834
     speed: 2
-    m_Value: 12.102099
+    m_Value: 4.900834
   m_Ortho:
     m_Target: 0
     speed: 2

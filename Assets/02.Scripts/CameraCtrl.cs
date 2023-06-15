@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CameraCtrl : MonoBehaviour
 {
-    public float height;
-    public float camSpeed;
-    public float curPan;
-    public float curTilt;
-    public float dist;
+    public float height = 1.75f;
+    public float camSpeed = 2f;
+    public float curPan = 0f;
+    public float curTilt = 10f;
+    public float dist = 5f;
+    public float curDist = 5f;
 
     float maxDist = 10f;
     float yMax = 90f;
@@ -46,7 +47,18 @@ public class CameraCtrl : MonoBehaviour
         dist = Mathf.Clamp(dist, 0f, maxDist);
 
         // 카메라 충돌
-        
+        Vector3 castDir = (mainCam.transform.position - transform.position).normalized;
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, castDir, out hit, curDist))
+        {
+            if (hit.collider != mainCam)
+            {
+                dist = hit.distance;
+            }
+            else
+                dist = curDist;
+        }
     }
 
     void LateUpdate()
