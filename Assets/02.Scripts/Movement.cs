@@ -68,9 +68,13 @@ public class Movement : MonoBehaviour
             transform.position += movedir.normalized * moveSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movedir), rotSpeed * Time.deltaTime);
             anim.SetBool("IsMove", true);
+            anim.SetBool("IsIdle", false);
         }
         else
+        {
             anim.SetBool("IsMove", false);
+            anim.SetBool("IsIdle", true);
+        }
     }
 
     Vector3 Rotating(float horizontal, float vertical)

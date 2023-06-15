@@ -2500,8 +2500,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   equip: 0
+  attackSpeed: 1
   isCombat: 0
+  attackPoint: {fileID: 1628478083}
   target: {fileID: 0}
+--- !u!4 &1120174937 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2804887462173318687, guid: 9c469b3cd8c633a4986a5b7a0d255f8e, type: 3}
+  m_PrefabInstance: {fileID: 7070657597661092406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1125842824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3560,6 +3567,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4407858820394055268, guid: 07ca537aafb7fb441bc97c919feab602, type: 3}
   m_PrefabInstance: {fileID: 1587422334}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1628478081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1628478082}
+  - component: {fileID: 1628478083}
+  m_Layer: 7
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1628478082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628478081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1120174937}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1628478083
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628478081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 1.5, z: 1}
 --- !u!1001 &1637490708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5037,6 +5089,10 @@ PrefabInstance:
     - target: {fileID: 7070657599541209020, guid: 9c469b3cd8c633a4986a5b7a0d255f8e, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070657599541209023, guid: 9c469b3cd8c633a4986a5b7a0d255f8e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c469b3cd8c633a4986a5b7a0d255f8e, type: 3}
