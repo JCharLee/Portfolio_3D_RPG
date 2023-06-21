@@ -10,6 +10,7 @@ public class Combat : MonoBehaviour
     public Equip equip;
 
     public float attackSpeed;
+    public float attackAngle;
     public bool isCombat = false;
 
     private int playerLayer;
@@ -21,6 +22,7 @@ public class Combat : MonoBehaviour
     private bool attacking;
 
     public SphereCollider attackPoint;
+    public Collider[] enemyCount;
     [SerializeField] GameObject target;
     Animator anim;
     Movement playerMove;
@@ -54,6 +56,19 @@ public class Combat : MonoBehaviour
         if (mode == Mode.Combat && target != null && !attacking)
         {
             attackRoutine = StartCoroutine(Attack());
+        }
+
+        switch (equip)
+        {
+            case Equip.None:
+                attackDist = 2.5f;
+                break;
+            case Equip.Melee:
+                attackDist = 3.5f;
+                break;
+            case Equip.Range:
+                attackDist = 10f;
+                break;
         }
     }
 
@@ -100,21 +115,13 @@ public class Combat : MonoBehaviour
         attacking = true;
         anim.SetBool("IsCombat", true);
 
-        switch (equip)
-        {
-            case Equip.None:
-                attackDist = 2.5f;
-                break;
-            case Equip.Melee:
-                attackDist = 3.5f;
-                break;
-            case Equip.Range:
-                attackDist = 10f;
-                break;
-        }
+        Vector3 dir = (target.transform.position - transform.position).normalized;
 
-        if (attackDist < (target.transform.position - transform.position).magnitude || target == null)
+        if (attackDist < dir.magnitude || target == null || Vector3.Angle(transform.forward, dir) > attackAngle * 0.5f)
+        {
+            attacking = false;
             yield break;
+        }
 
         anim.SetInteger("AttackIdx", Random.Range(0, 2));
         anim.SetTrigger("Attack");
